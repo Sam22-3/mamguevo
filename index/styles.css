@@ -1,0 +1,524 @@
+/* Colores base para reutilizar */
+:root {
+    --color-fondo-principal: #8B6C5C; /* Marrón medio */
+    --color-caja-secundaria: #D2A98D; /* Beige/marrón claro, como la caja de login */
+    --color-elementos-interactivos: #B48770; /* Marrón rojizo, como inputs del login */
+    --color-texto-claro: #ffffff;
+}
+
+body {
+    background-color: var(--color-fondo-principal);
+    margin: 0;
+    font-family: sans-serif;
+    color: var(--color-texto-claro); 
+    line-height: 1.6; 
+}
+
+/* 1. Encabezado Superior (Top Header) */
+.top-header {
+    background-color: rgba(0, 0, 0, 0.4); 
+    padding: 10px 20px;
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.top-nav a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9em;
+}
+
+.top-nav a:hover {
+    color: #f0f0f0; /* Un blanco más brillante al pasar el ratón */
+}
+
+.user-info {
+    color: var(--color-texto-claro);
+    margin-left: 30px;
+    font-weight: bold;
+}
+
+/* Sección del Banner/Imagen Principal */
+.hero-banner {
+    background-image: url('/imágenes/banner.jpg');
+    background-size: cover; 
+    background-position: center; 
+    height: 300px; 
+    width: 100%;
+}
+
+/*Barra de Navegación/Filtros */
+.filters-nav {
+    background-color: var(--color-caja-secundaria);
+    padding: 15px 20px;
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center;
+    border-radius: 10px;
+    margin: 20px auto; 
+    width: 90%; 
+    max-width: 1200px;
+}
+
+.filter-dropdown {
+    position: relative; 
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background-color: var(--color-elementos-interactivos);
+    color: var(--color-texto-claro);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.dropdown-btn:hover {
+    background-color: #A27B5C; /* Un tono ligeramente más oscuro al pasar el ratón */
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    background-color: var(--color-caja-secundaria);
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 5px;
+    padding: 10px 0;
+}
+
+.dropdown-content a {
+    color: var(--color-texto-claro);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--color-elementos-interactivos);
+}
+
+/* Mostrar el contenido del dropdown al pasar el ratón */
+.filter-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.random-btn {
+    background-color: var(--color-elementos-interactivos);
+    color: var(--color-texto-claro);
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.random-btn:hover {
+    background-color: #A27B5C;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 100px; /* Bordes redondeados como en el login */
+    background-color: var(--color-elementos-interactivos);
+    color: var(--color-texto-claro);
+    width: 200px;
+    margin-right: 5px;
+}
+
+.search-box input::placeholder {
+    color: var(--color-texto-claro);
+}
+
+.search-box button {
+    background-color: var(--color-elementos-interactivos);
+    color: var(--color-texto-claro);
+    border: none;
+    border-radius: 50%; /* Botón redondo */
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
+    display: flex; /* Para centrar el icono */
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box button:hover {
+    background-color: #A27B5C;
+}
+
+/*Título de Sección */
+.main-content {
+    max-width: 1200px;
+    margin: 30px auto; 
+    padding: 0 20px;
+}
+
+.section-title {
+    background-color: var(--color-caja-secundaria);
+    color: var(--color-texto-claro);
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+/* Grid de Libros  */
+.book-grid {
+    display: grid;
+    /* Ajusta el número de columnas y el tamaño de las celdas */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px; /* Espacio entre los elementos de la cuadrícula */
+    justify-items: center;
+}
+
+.book-item {
+    background-color: var(--color-caja-secundaria);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    width: 100%; 
+    max-width: 200px; 
+}
+
+.book-item img {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 5px; 
+    margin-bottom: 10px;
+}
+
+.book-item p {
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--color-texto-claro);
+    font-weight: bold;
+}
+
+/* Estilos específicos para la página de Inicio de Sesión */
+.login-box {
+    background-color: var(--color-caja-secundaria);
+    padding: 30px;
+    border-radius: 10px;
+    width: 280px;
+    text-align: center;
+    color: white;
+}
+
+.icono-usuario {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    display: block;
+    width: 93%;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 100px;
+    background-color: var(--color-elementos-interactivos);
+    color: white;
+}
+
+.login-box select {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 100px;
+    background-color: var(--color-elementos-interactivos);
+    color: white;
+}
+
+.login-box input::placeholder {
+    color: #ffffff;
+}
+
+.cajitacheckbox {
+    width: 100px;
+    text-align:center;
+    font-size: 14px;
+    margin: 10px auto;
+}
+
+.login-box a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+/* Estilos específicos para la página Quiénes Somos */
+.about-main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.about-section, .mission-section, .team-section {
+    margin-bottom: 40px;
+}
+
+.about-card, .mission-card, .team-member {
+    background-color: var(--color-caja-secundaria);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.about-card img, .team-member img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.mission-section {
+    display: flex;
+    gap: 20px;
+}
+
+.mission-card {
+    flex: 1;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.imagenesdirect {
+    image-resolution: 472px 640px;
+    object-fit: cover;
+}
+
+/* Estilos específicos para la página de Agenda Préstamo */
+.loan-main {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: var(--color-caja-secundaria);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.loan-section {
+    margin-bottom: 25px;
+}
+
+.loan-section h2 {
+    border-bottom: 2px solid var(--color-elementos-interactivos);
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-elementos-interactivos);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.submit-btn {
+    background-color: var(--color-elementos-interactivos);
+    color: var(--color-texto-claro);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #A27B5C;
+}
+
+.note {
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+/* Estilos específicos para la página de Contacto */
+.contact-info {
+    background-color: var(--color-caja-secundaria);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.contact-info h2 {
+    color: var(--color-texto-claro);
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.contact-item {
+    margin-bottom: 20px;
+}
+
+.contact-item p {
+    color: var(--color-texto-claro);
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+
+.contact-item strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 15px;
+    color: var(--color-texto-claro);
+    font-size: 1.8em;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #f0f0f0; 
+}
+
+/* Estilos específicos para la página de Detalle del Libro */
+.book-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-elementos-interactivos);
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.book-detail-header a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: var(--color-elementos-interactivos);
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.book-detail-header a:hover {
+    background-color: #A27B5C; /* Un tono ligeramente más oscuro al pasar el ratón */
+}
+
+.page-count {
+    color: var(--color-texto-claro);
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: var(--color-caja-secundaria);
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.book-content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    justify-content: center; 
+    align-items: flex-start; /* Alinea los ítems al inicio en el eje transversal */
+}
+
+.book-image-section,
+.book-synopsis-section {
+    background-color: var(--color-caja-secundaria);
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--color-texto-claro);
+    text-align: center;
+    flex: 1; /* Permite que los elementos crezcan */
+    min-width: 280px; 
+}
+
+.book-image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.book-synopsis-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espacio entre el título y la sinopsis */
+}
+
+.book-synopsis-section h3,
+.book-image-section h3 {
+    color: var(--color-texto-claro);
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.book-synopsis-section p {
+    text-align: justify;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.availability-section {
+    background-color: var(--color-caja-secundaria);
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--color-texto-claro);
+    text-align: center;
+    max-width: 400px; /* Ancho para la sección de disponibilidad */
+    margin: 20px auto; /* Centra la sección de disponibilidad */
+}
+
+.availability-section h3 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.return-button {
+    display: block;
+    background-color: var(--color-elementos-interactivos);
+    color: var(--color-texto-claro);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    margin: 30px auto;
+    width: fit-content; /* Se ajusta al contenido */
+}
+
+.return-button:hover {
+    background-color: #A27B5C;
+}
